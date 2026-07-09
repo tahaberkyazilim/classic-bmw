@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mustafa Akcan - Classic BMW R-Series Restoration</title>
     <meta name="description" content="Handcrafted parts, carefully completed restorations, and atelier support for classic BMW R-Series motorcycles, ready for worldwide inquiries.">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() { dataLayer.push(arguments); };
+        const savedAnalyticsConsent = localStorage.getItem('analytics_consent');
+        gtag('consent', 'default', {
+            analytics_storage: savedAnalyticsConsent === 'granted' ? 'granted' : 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 500
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-MR6TZE8PKE', {
+            send_page_view: savedAnalyticsConsent === 'granted'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MR6TZE8PKE"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         html { scroll-behavior: smooth; }
@@ -586,7 +603,7 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a href="mailto:01usta@gmail.com" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+            <a href="mailto:01usta@gmail.com" data-contact="email" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
                 <span class="text-xs text-neutral-500 uppercase tracking-wide">Email</span>
                 <strong class="block text-white mt-2 break-all">01usta@gmail.com</strong>
             </a>
@@ -594,11 +611,11 @@
                 <span class="text-xs text-neutral-500 uppercase tracking-wide">Phone</span>
                 <strong class="block text-white mt-2">+90 544 336 9328</strong>
             </div>
-            <a href="https://www.facebook.com/mustafa.akcan.7" target="_blank" rel="noopener" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+            <a href="https://www.facebook.com/mustafa.akcan.7" data-contact="facebook" target="_blank" rel="noopener" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
                 <span class="text-xs text-neutral-500 uppercase tracking-wide">Facebook</span>
                 <strong class="block text-white mt-2">mustafa.akcan.7</strong>
             </a>
-            <a href="https://www.instagram.com/mustafaserap99/" target="_blank" rel="noopener" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+            <a href="https://www.instagram.com/mustafaserap99/" data-contact="instagram" target="_blank" rel="noopener" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
                 <span class="text-xs text-neutral-500 uppercase tracking-wide">Instagram</span>
                 <strong class="block text-white mt-2">@mustafaserap99</strong>
             </a>
@@ -608,7 +625,10 @@
     <footer class="bg-neutral-950 border-t border-neutral-900 py-12 text-center text-xs text-neutral-500 tracking-wider">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p>&copy; 2026 Mustafa Akcan. All Rights Reserved.</p>
-            <p>Classic BMW R-Series Specialist</p>
+            <div class="flex items-center gap-4">
+                <button type="button" id="consent-settings" class="hover:text-amber-500 transition-colors">Analytics preferences</button>
+                <p>Classic BMW R-Series Specialist</p>
+            </div>
         </div>
     </footer>
 
@@ -648,6 +668,18 @@
             gallery = button.dataset.gallery.split('|').filter(Boolean);
             galleryIndex = 0;
             lightboxTitle.textContent = button.dataset.title || '';
+            const section = button.closest('#products') ? 'products'
+                : button.closest('#restorations') ? 'restorations'
+                : button.closest('#process') ? 'workshop'
+                : 'hero';
+            gtag('event', 'view_item', {
+                language: document.documentElement.lang,
+                items: [{
+                    item_id: gallery[0] || button.dataset.title,
+                    item_name: button.dataset.title || 'Gallery',
+                    item_category: section
+                }]
+            });
             renderLightbox();
             lightbox.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -667,6 +699,14 @@
         document.querySelectorAll('[data-gallery]').forEach((button) => {
             button.addEventListener('click', () => openLightbox(button));
         });
+        document.querySelectorAll('[data-contact]').forEach((link) => {
+            link.addEventListener('click', () => {
+                gtag('event', 'contact_click', {
+                    contact_method: link.dataset.contact,
+                    language: document.documentElement.lang
+                });
+            });
+        });
         closeBtn.addEventListener('click', closeLightbox);
         prevBtn.addEventListener('click', () => moveLightbox(-1));
         nextBtn.addEventListener('click', () => moveLightbox(1));
@@ -679,6 +719,53 @@
             if (event.key === 'ArrowLeft') moveLightbox(-1);
             if (event.key === 'ArrowRight') moveLightbox(1);
         });
+    </script>
+    <div id="analytics-consent" class="fixed inset-x-4 bottom-4 z-[90] hidden mx-auto max-w-2xl rounded-lg border border-neutral-700 bg-neutral-900 p-5 shadow-2xl">
+        <div class="sm:flex sm:items-center sm:justify-between sm:gap-6">
+            <div>
+                <strong class="block text-sm text-white">Analytics preferences</strong>
+                <p class="mt-2 text-sm leading-relaxed text-neutral-400">We use Google Analytics to understand site usage and which products receive the most interest.</p>
+            </div>
+            <div class="mt-4 flex shrink-0 gap-2 sm:mt-0">
+                <button type="button" id="consent-reject" class="rounded-md border border-neutral-700 px-4 py-2 text-sm font-semibold text-neutral-300 hover:bg-neutral-800">Reject</button>
+                <button type="button" id="consent-accept" class="rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-neutral-950 hover:bg-amber-400">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            const banner = document.getElementById('analytics-consent');
+            const acceptButton = document.getElementById('consent-accept');
+            const rejectButton = document.getElementById('consent-reject');
+            const settingsButton = document.getElementById('consent-settings');
+
+            function saveConsent(value) {
+                localStorage.setItem('analytics_consent', value);
+                gtag('consent', 'update', {
+                    analytics_storage: value,
+                    ad_storage: 'denied',
+                    ad_user_data: 'denied',
+                    ad_personalization: 'denied'
+                });
+                if (value === 'granted') {
+                    gtag('event', 'page_view', {
+                        page_title: document.title,
+                        page_location: window.location.href,
+                        language: document.documentElement.lang
+                    });
+                }
+                banner.classList.add('hidden');
+            }
+
+            acceptButton.addEventListener('click', () => saveConsent('granted'));
+            rejectButton.addEventListener('click', () => saveConsent('denied'));
+            settingsButton.addEventListener('click', () => banner.classList.remove('hidden'));
+
+            if (!localStorage.getItem('analytics_consent')) {
+                banner.classList.remove('hidden');
+            }
+        })();
     </script>
 </body>
 </html>
