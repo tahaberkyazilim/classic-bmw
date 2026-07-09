@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Akcan - Classic BMW R-Series Restoration</title>
+    <meta name="description" content="Handcrafted parts, carefully completed restorations, and atelier support for classic BMW R-Series motorcycles, ready for worldwide inquiries.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-neutral-950">
+
+    <header class="sticky top-0 z-50 bg-neutral-950/85 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4">
+            <a href="#hero" class="flex flex-col shrink-0">
+                <span class="text-xl font-bold tracking-wider text-amber-500">Mustafa Akcan</span>
+                <span class="text-xs text-neutral-400 tracking-wide">Classic BMW R-Series Restoration</span>
+            </a>
+            <div class="flex items-center">
+                <nav class="hidden lg:flex space-x-7 text-sm font-medium tracking-wide mr-8">
+                    <a href="#hero" class="text-neutral-300 hover:text-amber-500 transition-colors">Home</a>
+                    <a href="#products" class="text-neutral-300 hover:text-amber-500 transition-colors">Products</a>
+                    <a href="#restorations" class="text-neutral-300 hover:text-amber-500 transition-colors">Restorations</a>
+                    <a href="#process" class="text-neutral-300 hover:text-amber-500 transition-colors">Workshop</a>
+                    <a href="#contact" class="text-neutral-300 hover:text-amber-500 transition-colors">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-3 border-l border-neutral-800 pl-5 sm:pl-8">
+                    <a href="index-tr.html" class="text-neutral-400 hover:text-amber-500 text-sm tracking-widest transition-colors">TR</a><span class="text-neutral-700 text-sm">|</span><span class="text-amber-500 font-bold text-sm tracking-widest">EN</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative min-h-[86vh] flex items-center bg-neutral-950 px-4 border-b border-neutral-900 overflow-hidden">
+        <div class="absolute inset-0 opacity-25 pointer-events-none bg-[radial-gradient(#404040_1px,transparent_1px)] [background-size:18px_18px]"></div>
+        <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-amber-500/10 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center z-10 py-16">
+            <div>
+                <span class="inline-flex text-xs font-semibold tracking-widest text-amber-500 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full">Classic BMW R-Series parts and restoration work for international buyers</span>
+                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight mt-6 mb-5 text-white">
+                    Mustafa Akcan<br><span class="text-neutral-400">Classic BMW R-Series Restoration</span>
+                </h1>
+                <p class="text-lg text-neutral-400 max-w-2xl mb-8 leading-relaxed">Handcrafted parts, carefully completed restorations, and atelier support for classic BMW R-Series motorcycles, ready for worldwide inquiries.</p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <a href="#products" class="px-6 py-3 bg-amber-500 text-neutral-950 font-semibold rounded-md hover:bg-amber-400 transition-colors text-sm tracking-wide text-center">View Products</a>
+                    <a href="#contact" class="px-6 py-3 bg-neutral-900 text-neutral-300 font-semibold rounded-md hover:bg-neutral-800 border border-neutral-800 transition-colors text-sm tracking-wide text-center">Contact</a>
+                </div>
+                <div class="grid grid-cols-3 gap-3 max-w-2xl">
+                <div class="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+                    <strong class="block text-2xl text-white">32+</strong>
+                    <span class="text-xs text-neutral-400">part photos</span>
+                </div>
+                <div class="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+                    <strong class="block text-2xl text-white">9</strong>
+                    <span class="text-xs text-neutral-400">completed motorcycles</span>
+                </div>
+                <div class="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+                    <strong class="block text-2xl text-white">Global</strong>
+                    <span class="text-xs text-neutral-400">sales support</span>
+                </div>
+                </div>
+            </div>
+            <button type="button" id="hero-gallery" class="relative aspect-[4/3] rounded-lg overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl cursor-zoom-in" data-gallery="img-20191027-wa0004.jpeg|20210520-182342.jpg|received-371333108228085.jpeg|r25.jpeg|r26.jpg|r26.png|r27.jpeg|r51-3.jpeg|sepetli3.jpg" data-title="Completed Motorcycles" aria-label="Inspect Closely">
+                <img id="hero-gallery-image" src="img-20191027-wa0004.jpeg" alt="Completed Motorcycles" class="w-full h-full object-cover transition-opacity duration-500" loading="eager">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent"></div>
+                <span class="absolute left-4 bottom-4 text-sm font-semibold text-white">Completed Motorcycles</span>
+                <span id="hero-gallery-count" class="absolute right-4 bottom-4 text-xs font-mono text-white/80">1 / 9</span>
+            </button>
+        </div>
+    </section>
+
+    <script>
+        (() => {
+            const heroGallery = document.getElementById('hero-gallery');
+            const heroImage = document.getElementById('hero-gallery-image');
+            const heroCount = document.getElementById('hero-gallery-count');
+            const heroImages = heroGallery.dataset.gallery.split('|').filter(Boolean);
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let heroIndex = 0;
+            let heroTimer;
+
+            function showNextHeroImage() {
+                heroIndex = (heroIndex + 1) % heroImages.length;
+                heroImage.style.opacity = '0';
+                window.setTimeout(() => {
+                    heroImage.addEventListener('load', () => {
+                        heroImage.style.opacity = '1';
+                    }, { once: true });
+                    heroImage.src = heroImages[heroIndex];
+                    if (heroImage.complete) heroImage.style.opacity = '1';
+                    heroCount.textContent = `${heroIndex + 1} / ${heroImages.length}`;
+                }, 250);
+            }
+
+            function startHeroCarousel() {
+                if (reduceMotion || heroImages.length < 2) return;
+                window.clearInterval(heroTimer);
+                heroTimer = window.setInterval(showNextHeroImage, 3000);
+            }
+
+            heroGallery.addEventListener('mouseenter', () => window.clearInterval(heroTimer));
+            heroGallery.addEventListener('mouseleave', startHeroCarousel);
+            heroGallery.addEventListener('focusin', () => window.clearInterval(heroTimer));
+            heroGallery.addEventListener('focusout', startHeroCarousel);
+
+            if (heroImages[1]) {
+                const preload = new Image();
+                preload.src = heroImages[1];
+            }
+            startHeroCarousel();
+        })();
+    </script>
+
+    <section id="products" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-neutral-900">
+        <div class="mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+            <div>
+                <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Special Parts &amp; Products</h2>
+                <p class="text-neutral-400 max-w-2xl">Related photos are grouped under each product. Click any cover image to inspect the full-screen gallery.</p>
+            </div>
+            <a href="#contact" class="text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Contact</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20191002-214744.jpg" data-title="Aluminum Accessory and Fastener Set" aria-label="Inspect Closely">
+                        <img src="20191002-214744.jpg" alt="Aluminum Accessory and Fastener Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Aluminum Accessory and Fastener Set</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Selected aluminum parts, covers, and fasteners for restoration assemblies.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20200806-000211.jpg|img-20231014-222831.jpg" data-title="Classic Signal and Lamp Set" aria-label="Inspect Closely">
+                        <img src="20200806-000211.jpg" alt="Classic Signal and Lamp Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Classic Signal and Lamp Set</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Chrome-bodied lamp and signal sets with amber lenses, ready for restoration use.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="received-2287945074680398.jpeg" data-title="Pagusa Solo Seat" aria-label="Inspect Closely">
+                        <img src="received-2287945074680398.jpeg" alt="Pagusa Solo Seat" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Pagusa Solo Seat</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Classic sprung Pagusa rider seat with rubber texture.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20200113-201342.jpg" data-title="Model and Year Plates" aria-label="Inspect Closely">
+                        <img src="20200113-201342.jpg" alt="Model and Year Plates" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Model and Year Plates</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Period-correct model and production-year plates for classic BMW motorcycles.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20200723-wa0014.jpg" data-title="BMW Data Plate" aria-label="Inspect Closely">
+                        <img src="img-20200723-wa0014.jpg" alt="BMW Data Plate" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">BMW Data Plate</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Model-specific technical data plate for classic BMW motorcycles.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20181126-001449.jpg|img-20181126-001651.jpg" data-title="Classic BMW Side Cases" aria-label="Inspect Closely">
+                        <img src="img-20181126-001449.jpg" alt="Classic BMW Side Cases" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Classic BMW Side Cases</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Hand-finished side case sets for classic BMW motorcycles in black, white, and red.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="ayak-basma-demirleri-3.jpg|ayak-basma-demirleri-2.jpg|ayak-basma-derileri.jpg" data-title="Foot Peg Set" aria-label="Inspect Closely">
+                        <img src="ayak-basma-demirleri-3.jpg" alt="Foot Peg Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">3 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Foot Peg Set</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Left-right foot peg arms with classic rubber covers and pads.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="besik-amortisor-kovanlar.jpg|kazk-amortisor-kovanlar.jpg" data-title="Shock Sleeves" aria-label="Inspect Closely">
+                        <img src="besik-amortisor-kovanlar.jpg" alt="Shock Sleeves" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Shock Sleeves</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Custom-made polished cradle and plunger shock sleeve sets.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="diferansiyel-kapak-somunu.jpg" data-title="Final Drive Cover Nuts" aria-label="Inspect Closely">
+                        <img src="diferansiyel-kapak-somunu.jpg" alt="Final Drive Cover Nuts" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Final Drive Cover Nuts</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Precision-machined nuts for the rear final drive cover.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="eksoz-bogaz-ve-somunu.jpg|eksok-bogaz-disi.jpg|eksoz-bogaz-dis-imalat.jpg|silindir-kapag-eksoz-bogaz-disi.jpg" data-title="Exhaust Port Thread and Nut Group" aria-label="Inspect Closely">
+                        <img src="eksoz-bogaz-ve-somunu.jpg" alt="Exhaust Port Thread and Nut Group" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">4 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Exhaust Port Thread and Nut Group</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Thread renewal and nut fitment work for cylinder-head exhaust ports.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="elektronik-atesleme.jpg" data-title="Electronic Ignition Set" aria-label="Inspect Closely">
+                        <img src="elektronik-atesleme.jpg" alt="Electronic Ignition Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Electronic Ignition Set</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Modern and reliable ignition conversion set for classic BMW R-Series.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20210605-wa0004.jpg|img-20190408-175037.jpg" data-title="BMW Tank Roundel Sets" aria-label="Inspect Closely">
+                        <img src="img-20210605-wa0004.jpg" alt="BMW Tank Roundel Sets" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">BMW Tank Roundel Sets</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Classic BMW roundels in multiple sizes for tanks and covers.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20251204-211125.jpg|img-20251204-210807.jpg|img-20251204-211138.jpg|kilometre-saati-kadranlar.jpg|km-saat-kadran.jpg|km-saat-kadran-2.jpg" data-title="Speedometers and Dial Faces" aria-label="Inspect Closely">
+                        <img src="img-20251204-211125.jpg" alt="Speedometers and Dial Faces" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">6 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Speedometers and Dial Faces</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Classic gauge units, refinished dial faces, and calibrated speedometer options.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20260627-132323.jpg" data-title="Headlight Ear Set" aria-label="Inspect Closely">
+                        <img src="img-20260627-132323.jpg" alt="Headlight Ear Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Headlight Ear Set</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Left-right headlight ear set, ready for paint or chrome.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="kas-halat-dislileri.jpg|kas-halat-dislisi.jpg" data-title="Cable Gear Sets" aria-label="Inspect Closely">
+                        <img src="kas-halat-dislileri.jpg" alt="Cable Gear Sets" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Cable Gear Sets</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Precision-machined cable gears inspected after batch production.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="kilometre-cevrim-dislisi.jpg" data-title="Speedometer Drive Gear" aria-label="Inspect Closely">
+                        <img src="kilometre-cevrim-dislisi.jpg" alt="Speedometer Drive Gear" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Speedometer Drive Gear</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Precision-machined speedometer drive gears.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="orijinal-gorunumde-kontak-anahtar.jpg" data-title="Original-Style Ignition Keys" aria-label="Inspect Closely">
+                        <img src="orijinal-gorunumde-kontak-anahtar.jpg" alt="Original-Style Ignition Keys" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Original-Style Ignition Keys</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Original-style key sets for classic ignition systems.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="orta-ayaklk.jpg" data-title="Center Stand" aria-label="Inspect Closely">
+                        <img src="orta-ayaklk.jpg" alt="Center Stand" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Center Stand</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Cleaned and installation-ready center stand assembly for R-Series motorcycles.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="subap-itici-kavallar.jpg" data-title="Pushrod Tube Set" aria-label="Inspect Closely">
+                        <img src="subap-itici-kavallar.jpg" alt="Pushrod Tube Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Pushrod Tube Set</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Refinished pushrod tube group for classic BMW engines.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Ask Availability</a>
+            </article>
+        </div>
+    </section>
+
+    <section id="restorations" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-neutral-900">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Completed Restorations</h2>
+            <p class="text-neutral-400 max-w-xl">Only completed motorcycle projects are shown in this section.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="20200114-140150.jpg|received-1297363674120186.jpeg" data-title="BMW R50/2 with Sidecar" aria-label="Inspect Closely">
+                        <img src="20200114-140150.jpg" alt="BMW R50/2 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">1962</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">BMW R50/2 with Sidecar</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">A classic sidecar BMW project completed with red paint and chrome details.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Completed</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="20210520-182342.jpg" data-title="BMW R60/2 with Sidecar" aria-label="Inspect Closely">
+                        <img src="20210520-182342.jpg" alt="BMW R60/2 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">1967</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">BMW R60/2 with Sidecar</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">White/cream sidecar project receiving final pre-delivery checks.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">In Collection</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="received-371333108228085.jpeg" data-title="Green BMW with Sidecar" aria-label="Inspect Closely">
+                        <img src="received-371333108228085.jpeg" alt="Green BMW with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">1960&#x27;lar</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Green BMW with Sidecar</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Completed green BMW sidecar restoration project in the atelier.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Completed</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r25.jpeg" data-title="Green BMW R25" aria-label="Inspect Closely">
+                        <img src="r25.jpeg" alt="Green BMW R25" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R25</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Green BMW R25</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">A classic BMW R25 completed in green with white pinstripes and renewed chrome details.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Completed</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r26.jpg" data-title="Cream BMW R26" aria-label="Inspect Closely">
+                        <img src="r26.jpg" alt="Cream BMW R26" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R26</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Cream BMW R26</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">A BMW R26 completed in cream with black pinstripes and period-correct details.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Completed</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r26.png" data-title="Black BMW R26" aria-label="Inspect Closely">
+                        <img src="r26.png" alt="Black BMW R26" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R26</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Black BMW R26</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">A completed BMW R26 restoration in classic black with white pinstripes.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Completed</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r27.jpeg" data-title="Black BMW R27" aria-label="Inspect Closely">
+                        <img src="r27.jpeg" alt="Black BMW R27" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R27</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Black BMW R27</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">A completed single-cylinder BMW R27 retaining its original classic lines.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Completed</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r51-3.jpeg" data-title="Black BMW R51/3" aria-label="Inspect Closely">
+                        <img src="r51-3.jpeg" alt="Black BMW R51/3" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R51/3</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Black BMW R51/3</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">A BMW R51/3 completed with classic black bodywork and white pinstripe details.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Completed</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="sepetli3.jpg|sepetli4.jpg|sepetli.jpg" data-title="1956 BMW R26 with Sidecar" aria-label="Inspect Closely">
+                        <img src="sepetli3.jpg" alt="1956 BMW R26 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">3 Photos</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">1956</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">1956 BMW R26 with Sidecar</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">A completed BMW R26 project with black paint, red upholstery, and a Steib sidecar.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Completed</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="process" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-neutral-900 bg-neutral-900/30 rounded-lg">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Workshop Details</h2>
+            <p class="text-neutral-400 max-w-xl">Selected moments from bodywork, paint, gauge, and detail-part restoration processes.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="20210311-144845.jpg" data-title="Tank paint and emblem preparation" aria-label="Inspect Closely">
+                <img src="20210311-144845.jpg" alt="Tank paint and emblem preparation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20251204-210807.jpg" data-title="Gauge refurbishment detail" aria-label="Inspect Closely">
+                <img src="img-20251204-210807.jpg" alt="Gauge refurbishment detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20251204-211138.jpg" data-title="Gauge collection" aria-label="Inspect Closely">
+                <img src="img-20251204-211138.jpg" alt="Gauge collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="kilometre-saati-kadranlar.jpg" data-title="Dial preparation shelf" aria-label="Inspect Closely">
+                <img src="kilometre-saati-kadranlar.jpg" alt="Dial preparation shelf" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20210605-wa0004.jpg" data-title="BMW roundel details" aria-label="Inspect Closely">
+                <img src="img-20210605-wa0004.jpg" alt="BMW roundel details" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20190408-175037.jpg" data-title="Logo and roundel options" aria-label="Inspect Closely">
+                <img src="img-20190408-175037.jpg" alt="Logo and roundel options" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+        </div>
+    </section>
+
+    <section class="py-16 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
+            <h2 class="text-2xl font-bold text-white">Ready for international inquiries</h2>
+            <p class="text-neutral-400 leading-relaxed">Reach out directly for part compatibility, extra photos, packaging, and shipping options.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Get in Touch</h2>
+            <p class="text-neutral-400">The fastest channels for classic BMW projects, spare-part requests, and international orders.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="mailto:01usta@gmail.com" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+                <span class="text-xs text-neutral-500 uppercase tracking-wide">Email</span>
+                <strong class="block text-white mt-2 break-all">01usta@gmail.com</strong>
+            </a>
+            <div class="bg-neutral-900 border border-neutral-800 rounded-lg p-5">
+                <span class="text-xs text-neutral-500 uppercase tracking-wide">Phone</span>
+                <strong class="block text-white mt-2">+90 544 336 9328</strong>
+            </div>
+            <a href="https://www.facebook.com/mustafa.akcan.7" target="_blank" rel="noopener" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+                <span class="text-xs text-neutral-500 uppercase tracking-wide">Facebook</span>
+                <strong class="block text-white mt-2">mustafa.akcan.7</strong>
+            </a>
+            <a href="https://www.instagram.com/mustafaserap99/" target="_blank" rel="noopener" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+                <span class="text-xs text-neutral-500 uppercase tracking-wide">Instagram</span>
+                <strong class="block text-white mt-2">@mustafaserap99</strong>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-12 text-center text-xs text-neutral-500 tracking-wider">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Mustafa Akcan. All Rights Reserved.</p>
+            <p>Classic BMW R-Series Specialist</p>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/95 p-4 sm:p-8">
+        <button type="button" id="lightbox-close" class="absolute right-4 top-4 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20">Close</button>
+        <button type="button" id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white hover:bg-white/20" aria-label="Previous">‹</button>
+        <button type="button" id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white hover:bg-white/20" aria-label="Next">›</button>
+        <div class="flex h-full flex-col items-center justify-center gap-4">
+            <img id="lightbox-img" src="" alt="" class="max-h-[82vh] max-w-full object-contain">
+            <div class="text-center">
+                <p id="lightbox-title" class="text-sm font-semibold text-white"></p>
+                <p id="lightbox-count" class="text-xs text-neutral-400 mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxCount = document.getElementById('lightbox-count');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        let gallery = [];
+        let galleryIndex = 0;
+
+        function renderLightbox() {
+            if (!gallery.length) return;
+            lightboxImg.src = gallery[galleryIndex];
+            lightboxCount.textContent = `${galleryIndex + 1} / ${gallery.length}`;
+            prevBtn.style.display = gallery.length > 1 ? 'block' : 'none';
+            nextBtn.style.display = gallery.length > 1 ? 'block' : 'none';
+        }
+
+        function openLightbox(button) {
+            gallery = button.dataset.gallery.split('|').filter(Boolean);
+            galleryIndex = 0;
+            lightboxTitle.textContent = button.dataset.title || '';
+            renderLightbox();
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightboxImg.src = '';
+            document.body.style.overflow = '';
+        }
+
+        function moveLightbox(direction) {
+            galleryIndex = (galleryIndex + direction + gallery.length) % gallery.length;
+            renderLightbox();
+        }
+
+        document.querySelectorAll('[data-gallery]').forEach((button) => {
+            button.addEventListener('click', () => openLightbox(button));
+        });
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', () => moveLightbox(-1));
+        nextBtn.addEventListener('click', () => moveLightbox(1));
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (event.key === 'Escape') closeLightbox();
+            if (event.key === 'ArrowLeft') moveLightbox(-1);
+            if (event.key === 'ArrowRight') moveLightbox(1);
+        });
+    </script>
+</body>
+</html>

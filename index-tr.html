@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Akcan - Klasik BMW R-Serisi Restorasyonu</title>
+    <meta name="description" content="Klasik BMW R-Serisi motosikletler için el işçiliğiyle üretilmiş parçalar, özenle tamamlanan restorasyonlar ve dünyanın her yerine satışa uygun atölye deneyimi.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        button, a { -webkit-tap-highlight-color: transparent; }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-neutral-950">
+
+    <header class="sticky top-0 z-50 bg-neutral-950/85 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4">
+            <a href="#hero" class="flex flex-col shrink-0">
+                <span class="text-xl font-bold tracking-wider text-amber-500">Mustafa Akcan</span>
+                <span class="text-xs text-neutral-400 tracking-wide">Klasik BMW R-Serisi Restorasyonu</span>
+            </a>
+            <div class="flex items-center">
+                <nav class="hidden lg:flex space-x-7 text-sm font-medium tracking-wide mr-8">
+                    <a href="#hero" class="text-neutral-300 hover:text-amber-500 transition-colors">Ana Sayfa</a>
+                    <a href="#products" class="text-neutral-300 hover:text-amber-500 transition-colors">Ürünler</a>
+                    <a href="#restorations" class="text-neutral-300 hover:text-amber-500 transition-colors">Restorasyonlar</a>
+                    <a href="#process" class="text-neutral-300 hover:text-amber-500 transition-colors">Atölye</a>
+                    <a href="#contact" class="text-neutral-300 hover:text-amber-500 transition-colors">İletişim</a>
+                </nav>
+                <div class="flex items-center space-x-3 border-l border-neutral-800 pl-5 sm:pl-8">
+                    <span class="text-amber-500 font-bold text-sm tracking-widest">TR</span><span class="text-neutral-700 text-sm">|</span><a href="index.html" class="text-neutral-400 hover:text-amber-500 text-sm tracking-widest transition-colors">EN</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative min-h-[86vh] flex items-center bg-neutral-950 px-4 border-b border-neutral-900 overflow-hidden">
+        <div class="absolute inset-0 opacity-25 pointer-events-none bg-[radial-gradient(#404040_1px,transparent_1px)] [background-size:18px_18px]"></div>
+        <div class="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-amber-500/10 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center z-10 py-16">
+            <div>
+                <span class="inline-flex text-xs font-semibold tracking-widest text-amber-500 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full">Uluslararası klasik BMW R-Serisi parçaları ve restorasyon işleri</span>
+                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight mt-6 mb-5 text-white">
+                    Mustafa Akcan<br><span class="text-neutral-400">Klasik BMW R-Serisi Restorasyonu</span>
+                </h1>
+                <p class="text-lg text-neutral-400 max-w-2xl mb-8 leading-relaxed">Klasik BMW R-Serisi motosikletler için el işçiliğiyle üretilmiş parçalar, özenle tamamlanan restorasyonlar ve dünyanın her yerine satışa uygun atölye deneyimi.</p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <a href="#products" class="px-6 py-3 bg-amber-500 text-neutral-950 font-semibold rounded-md hover:bg-amber-400 transition-colors text-sm tracking-wide text-center">Ürünleri İncele</a>
+                    <a href="#contact" class="px-6 py-3 bg-neutral-900 text-neutral-300 font-semibold rounded-md hover:bg-neutral-800 border border-neutral-800 transition-colors text-sm tracking-wide text-center">İletişime Geç</a>
+                </div>
+                <div class="grid grid-cols-3 gap-3 max-w-2xl">
+                <div class="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+                    <strong class="block text-2xl text-white">32+</strong>
+                    <span class="text-xs text-neutral-400">parça fotoğrafı</span>
+                </div>
+                <div class="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+                    <strong class="block text-2xl text-white">9</strong>
+                    <span class="text-xs text-neutral-400">tamamlanan motor</span>
+                </div>
+                <div class="rounded-lg border border-neutral-800 bg-neutral-900/70 p-4">
+                    <strong class="block text-2xl text-white">Global</strong>
+                    <span class="text-xs text-neutral-400">satış ve iletişim</span>
+                </div>
+                </div>
+            </div>
+            <button type="button" id="hero-gallery" class="relative aspect-[4/3] rounded-lg overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl cursor-zoom-in" data-gallery="img-20191027-wa0004.jpeg|20210520-182342.jpg|received-371333108228085.jpeg|r25.jpeg|r26.jpg|r26.png|r27.jpeg|r51-3.jpeg|sepetli3.jpg" data-title="Tamamlanan Motorlar" aria-label="Yakından İncele">
+                <img id="hero-gallery-image" src="img-20191027-wa0004.jpeg" alt="Tamamlanan Motorlar" class="w-full h-full object-cover transition-opacity duration-500" loading="eager">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent"></div>
+                <span class="absolute left-4 bottom-4 text-sm font-semibold text-white">Tamamlanan Motorlar</span>
+                <span id="hero-gallery-count" class="absolute right-4 bottom-4 text-xs font-mono text-white/80">1 / 9</span>
+            </button>
+        </div>
+    </section>
+
+    <script>
+        (() => {
+            const heroGallery = document.getElementById('hero-gallery');
+            const heroImage = document.getElementById('hero-gallery-image');
+            const heroCount = document.getElementById('hero-gallery-count');
+            const heroImages = heroGallery.dataset.gallery.split('|').filter(Boolean);
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let heroIndex = 0;
+            let heroTimer;
+
+            function showNextHeroImage() {
+                heroIndex = (heroIndex + 1) % heroImages.length;
+                heroImage.style.opacity = '0';
+                window.setTimeout(() => {
+                    heroImage.addEventListener('load', () => {
+                        heroImage.style.opacity = '1';
+                    }, { once: true });
+                    heroImage.src = heroImages[heroIndex];
+                    if (heroImage.complete) heroImage.style.opacity = '1';
+                    heroCount.textContent = `${heroIndex + 1} / ${heroImages.length}`;
+                }, 250);
+            }
+
+            function startHeroCarousel() {
+                if (reduceMotion || heroImages.length < 2) return;
+                window.clearInterval(heroTimer);
+                heroTimer = window.setInterval(showNextHeroImage, 3000);
+            }
+
+            heroGallery.addEventListener('mouseenter', () => window.clearInterval(heroTimer));
+            heroGallery.addEventListener('mouseleave', startHeroCarousel);
+            heroGallery.addEventListener('focusin', () => window.clearInterval(heroTimer));
+            heroGallery.addEventListener('focusout', startHeroCarousel);
+
+            if (heroImages[1]) {
+                const preload = new Image();
+                preload.src = heroImages[1];
+            }
+            startHeroCarousel();
+        })();
+    </script>
+
+    <section id="products" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-neutral-900">
+        <div class="mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+            <div>
+                <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Özel Parçalar &amp; Ürünler</h2>
+                <p class="text-neutral-400 max-w-2xl">Aynı ürüne ait fotoğraflar tek kart altında toplandı. Fotoğrafa basarak yakın planları tam ekran inceleyebilirsiniz.</p>
+            </div>
+            <a href="#contact" class="text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">İletişime Geç</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20191002-214744.jpg" data-title="Alüminyum Aksesuar ve Bağlantı Seti" aria-label="Yakından İncele">
+                        <img src="20191002-214744.jpg" alt="Alüminyum Aksesuar ve Bağlantı Seti" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Alüminyum Aksesuar ve Bağlantı Seti</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Restorasyon montajları için seçilmiş alüminyum parçalar, kapaklar ve bağlantı elemanları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20200806-000211.jpg|img-20231014-222831.jpg" data-title="Klasik Sinyal ve Lamba Grubu" aria-label="Yakından İncele">
+                        <img src="20200806-000211.jpg" alt="Klasik Sinyal ve Lamba Grubu" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Klasik Sinyal ve Lamba Grubu</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Krom gövdeli, amber camlı ve restorasyona hazır lamba/sinyal takımları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="received-2287945074680398.jpeg" data-title="Pagusa Tekli Koltuk" aria-label="Yakından İncele">
+                        <img src="received-2287945074680398.jpeg" alt="Pagusa Tekli Koltuk" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Pagusa Tekli Koltuk</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Kauçuk dokulu, yaylı klasik Pagusa sürücü selesi.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20200113-201342.jpg" data-title="Model ve Yıl Plakaları" aria-label="Yakından İncele">
+                        <img src="20200113-201342.jpg" alt="Model ve Yıl Plakaları" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Model ve Yıl Plakaları</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Klasik BMW modelleri için dönemine uygun model ve üretim yılı plakaları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20200723-wa0014.jpg" data-title="BMW Bilgi Plakası" aria-label="Yakından İncele">
+                        <img src="img-20200723-wa0014.jpg" alt="BMW Bilgi Plakası" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">BMW Bilgi Plakası</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Klasik BMW motosikletler için modele özel teknik bilgi plakası.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20181126-001449.jpg|img-20181126-001651.jpg" data-title="Klasik BMW Yan Çantaları" aria-label="Yakından İncele">
+                        <img src="img-20181126-001449.jpg" alt="Klasik BMW Yan Çantaları" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Klasik BMW Yan Çantaları</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Siyah, beyaz ve kırmızı renk seçenekleriyle, klasik BMW motosikletler için el işçiliği yan çanta takımları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="ayak-basma-demirleri-3.jpg|ayak-basma-demirleri-2.jpg|ayak-basma-derileri.jpg" data-title="Ayak Basma Takımı" aria-label="Yakından İncele">
+                        <img src="ayak-basma-demirleri-3.jpg" alt="Ayak Basma Takımı" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">3 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Ayak Basma Takımı</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Sağ-sol ayak basma demirleri ve klasik kauçuk kaplama parçaları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="besik-amortisor-kovanlar.jpg|kazk-amortisor-kovanlar.jpg" data-title="Amortisör Kovanları" aria-label="Yakından İncele">
+                        <img src="besik-amortisor-kovanlar.jpg" alt="Amortisör Kovanları" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Amortisör Kovanları</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Özel imalat, polisajı tamamlanmış beşik ve kazık amortisör kovanları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="diferansiyel-kapak-somunu.jpg" data-title="Diferansiyel Kapak Somunları" aria-label="Yakından İncele">
+                        <img src="diferansiyel-kapak-somunu.jpg" alt="Diferansiyel Kapak Somunları" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Diferansiyel Kapak Somunları</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Arka diferansiyel kapağı için hassas işlenmiş bağlantı somunları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="eksoz-bogaz-ve-somunu.jpg|eksok-bogaz-disi.jpg|eksoz-bogaz-dis-imalat.jpg|silindir-kapag-eksoz-bogaz-disi.jpg" data-title="Egzoz Boğazı Diş ve Somun Grubu" aria-label="Yakından İncele">
+                        <img src="eksoz-bogaz-ve-somunu.jpg" alt="Egzoz Boğazı Diş ve Somun Grubu" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">4 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Egzoz Boğazı Diş ve Somun Grubu</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Silindir kapağı egzoz boğazı için diş yenileme ve somun eşleşme çalışmaları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="elektronik-atesleme.jpg" data-title="Elektronik Ateşleme Seti" aria-label="Yakından İncele">
+                        <img src="elektronik-atesleme.jpg" alt="Elektronik Ateşleme Seti" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Elektronik Ateşleme Seti</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Klasik BMW R-Serisi için modern ve güvenilir ateşleme dönüşüm seti.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20210605-wa0004.jpg|img-20190408-175037.jpg" data-title="BMW Depo Arma Setleri" aria-label="Yakından İncele">
+                        <img src="img-20210605-wa0004.jpg" alt="BMW Depo Arma Setleri" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">BMW Depo Arma Setleri</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Depo ve kapak uygulamaları için farklı ölçülerde klasik BMW armaları.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20251204-211125.jpg|img-20251204-210807.jpg|img-20251204-211138.jpg|kilometre-saati-kadranlar.jpg|km-saat-kadran.jpg|km-saat-kadran-2.jpg" data-title="Kilometre Saati ve Kadranları" aria-label="Yakından İncele">
+                        <img src="img-20251204-211125.jpg" alt="Kilometre Saati ve Kadranları" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">6 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Kilometre Saati ve Kadranları</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Klasik gösterge üniteleri, yenilenmiş kadranlar ve kalibrasyonu yapılmış seçenekler.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20260627-132323.jpg" data-title="Far Kulağı Takımı" aria-label="Yakından İncele">
+                        <img src="img-20260627-132323.jpg" alt="Far Kulağı Takımı" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Far Kulağı Takımı</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Sağ-sol takım halinde, boyaya veya kroma hazır far kulağı grubu.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="kas-halat-dislileri.jpg|kas-halat-dislisi.jpg" data-title="Kas Halatı Dişlileri" aria-label="Yakından İncele">
+                        <img src="kas-halat-dislileri.jpg" alt="Kas Halatı Dişlileri" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Kas Halatı Dişlileri</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Seri imalat sonrası kontrol edilmiş, hassas işlenmiş kas halatı dişlileri.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="kilometre-cevrim-dislisi.jpg" data-title="Kilometre Çevrim Dişlisi" aria-label="Yakından İncele">
+                        <img src="kilometre-cevrim-dislisi.jpg" alt="Kilometre Çevrim Dişlisi" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Kilometre Çevrim Dişlisi</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Gösterge tahriki için hassas işlenmiş kilometre çevrim dişlileri.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="orijinal-gorunumde-kontak-anahtar.jpg" data-title="Orijinal Görünümlü Kontak Anahtarı" aria-label="Yakından İncele">
+                        <img src="orijinal-gorunumde-kontak-anahtar.jpg" alt="Orijinal Görünümlü Kontak Anahtarı" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Orijinal Görünümlü Kontak Anahtarı</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Klasik kontak sistemleri için orijinal görünümlü anahtar setleri.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="orta-ayaklk.jpg" data-title="Orta Ayaklık" aria-label="Yakından İncele">
+                        <img src="orta-ayaklk.jpg" alt="Orta Ayaklık" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Orta Ayaklık</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">R-Serisi için temizlenmiş ve montaja hazır orta ayaklık grubu.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
+                <div>
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="subap-itici-kavallar.jpg" data-title="Sübap İtici Kaval Takımı" aria-label="Yakından İncele">
+                        <img src="subap-itici-kavallar.jpg" alt="Sübap İtici Kaval Takımı" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                    <h4 class="text-base font-bold text-white mb-1">Sübap İtici Kaval Takımı</h4>
+                    <p class="text-xs text-neutral-400 mb-4 leading-relaxed">Klasik BMW motorları için yenilenmiş sübap itici kaval grubu.</p>
+                </div>
+                <a href="#contact" class="mt-2 pt-3 border-t border-neutral-800 text-sm font-semibold text-amber-500 hover:text-amber-300 transition-colors">Stok / Bilgi Al</a>
+            </article>
+        </div>
+    </section>
+
+    <section id="restorations" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-neutral-900">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Tamamlanan Restorasyonlar</h2>
+            <p class="text-neutral-400 max-w-xl">Bu bölümde yalnızca tamamlanmış motosiklet projeleri yer alıyor.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="20200114-140150.jpg|received-1297363674120186.jpeg" data-title="BMW R50/2 Sepetli" aria-label="Yakından İncele">
+                        <img src="20200114-140150.jpg" alt="BMW R50/2 Sepetli" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">1962</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">BMW R50/2 Sepetli</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Kırmızı boya ve krom detaylarıyla tamamlanan, sepetli klasik BMW projesi.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Atölyeden Çıktı</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="20210520-182342.jpg" data-title="BMW R60/2 Sepetli" aria-label="Yakından İncele">
+                        <img src="20210520-182342.jpg" alt="BMW R60/2 Sepetli" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">1967</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">BMW R60/2 Sepetli</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Teslim öncesi son kontrolleri yapılan beyaz/krem sepetli proje.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Koleksiyonda</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="received-371333108228085.jpeg" data-title="Yeşil Sepetli BMW" aria-label="Yakından İncele">
+                        <img src="received-371333108228085.jpeg" alt="Yeşil Sepetli BMW" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">1960&#x27;lar</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Yeşil Sepetli BMW</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Atölyede tamamlanmış, sepetli yeşil BMW restorasyon projesi.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Tamamlandı</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r25.jpeg" data-title="Yeşil BMW R25" aria-label="Yakından İncele">
+                        <img src="r25.jpeg" alt="Yeşil BMW R25" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R25</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Yeşil BMW R25</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Yeşil boya, beyaz şeritler ve yenilenen krom detaylarla tamamlanan klasik BMW R25.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Tamamlandı</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r26.jpg" data-title="Krem BMW R26" aria-label="Yakından İncele">
+                        <img src="r26.jpg" alt="Krem BMW R26" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R26</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Krem BMW R26</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Krem renk, siyah şeritler ve dönemine uygun detaylarla tamamlanan BMW R26.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Tamamlandı</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r26.png" data-title="Siyah BMW R26" aria-label="Yakından İncele">
+                        <img src="r26.png" alt="Siyah BMW R26" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R26</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Siyah BMW R26</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Klasik siyah boya ve beyaz şeritlerle tamamlanan BMW R26 restorasyonu.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Tamamlandı</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r27.jpeg" data-title="Siyah BMW R27" aria-label="Yakından İncele">
+                        <img src="r27.jpeg" alt="Siyah BMW R27" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R27</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Siyah BMW R27</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Orijinal çizgileri korunarak tamamlanan tek silindirli klasik BMW R27.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Tamamlandı</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r51-3.jpeg" data-title="Siyah BMW R51/3" aria-label="Yakından İncele">
+                        <img src="r51-3.jpeg" alt="Siyah BMW R51/3" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">BMW R51/3</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">Siyah BMW R51/3</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Klasik siyah gövde ve beyaz şerit detaylarıyla tamamlanan BMW R51/3.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Tamamlandı</span>
+                </div>
+            </article>
+
+            <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
+                <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="sepetli3.jpg|sepetli4.jpg|sepetli.jpg" data-title="1956 BMW R26 Sepetli" aria-label="Yakından İncele">
+                        <img src="sepetli3.jpg" alt="1956 BMW R26 Sepetli" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                        <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">3 Fotoğraf</span>
+                        <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-amber-500">1956</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-3">1956 BMW R26 Sepetli</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed mb-4">Siyah boya, kırmızı döşeme ve Steib sepetiyle tamamlanan BMW R26 projesi.</p>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded self-start">Tamamlandı</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="process" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-neutral-900 bg-neutral-900/30 rounded-lg">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">Atölyeden Kareler</h2>
+            <p class="text-neutral-400 max-w-xl">Kaporta, boya, gösterge ve detay parçalarının restorasyon sürecinden seçilmiş kareler.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="20210311-144845.jpg" data-title="Depo boya ve arma hazırlığı" aria-label="Yakından İncele">
+                <img src="20210311-144845.jpg" alt="Depo boya ve arma hazırlığı" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20251204-210807.jpg" data-title="Gösterge yenileme detayı" aria-label="Yakından İncele">
+                <img src="img-20251204-210807.jpg" alt="Gösterge yenileme detayı" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20251204-211138.jpg" data-title="Gösterge koleksiyonu" aria-label="Yakından İncele">
+                <img src="img-20251204-211138.jpg" alt="Gösterge koleksiyonu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="kilometre-saati-kadranlar.jpg" data-title="Kadran hazırlık rafı" aria-label="Yakından İncele">
+                <img src="kilometre-saati-kadranlar.jpg" alt="Kadran hazırlık rafı" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20210605-wa0004.jpg" data-title="BMW arma detayları" aria-label="Yakından İncele">
+                <img src="img-20210605-wa0004.jpg" alt="BMW arma detayları" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20190408-175037.jpg" data-title="Logo ve arma seçenekleri" aria-label="Yakından İncele">
+                <img src="img-20190408-175037.jpg" alt="Logo ve arma seçenekleri" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            </button>
+        </div>
+    </section>
+
+    <section class="py-16 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
+            <h2 class="text-2xl font-bold text-white">Yurt dışı satışlar için hazır iletişim</h2>
+            <p class="text-neutral-400 leading-relaxed">Parça uygunluğu, fotoğraf detayı, paketleme ve gönderim seçenekleri için doğrudan yazabilirsiniz.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold tracking-tight text-white mb-4">İletişime Geçin</h2>
+            <p class="text-neutral-400">Klasik BMW projeleri, yedek parça talepleri ve uluslararası siparişler için en hızlı kanallar.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="mailto:01usta@gmail.com" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+                <span class="text-xs text-neutral-500 uppercase tracking-wide">E-posta</span>
+                <strong class="block text-white mt-2 break-all">01usta@gmail.com</strong>
+            </a>
+            <div class="bg-neutral-900 border border-neutral-800 rounded-lg p-5">
+                <span class="text-xs text-neutral-500 uppercase tracking-wide">Telefon</span>
+                <strong class="block text-white mt-2">+90 544 336 9328</strong>
+            </div>
+            <a href="https://www.facebook.com/mustafa.akcan.7" target="_blank" rel="noopener" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+                <span class="text-xs text-neutral-500 uppercase tracking-wide">Facebook</span>
+                <strong class="block text-white mt-2">mustafa.akcan.7</strong>
+            </a>
+            <a href="https://www.instagram.com/mustafaserap99/" target="_blank" rel="noopener" class="bg-neutral-900 border border-neutral-800 rounded-lg p-5 hover:border-amber-500/60 transition-colors">
+                <span class="text-xs text-neutral-500 uppercase tracking-wide">Instagram</span>
+                <strong class="block text-white mt-2">@mustafaserap99</strong>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-12 text-center text-xs text-neutral-500 tracking-wider">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Mustafa Akcan. Tüm Hakları Saklıdır.</p>
+            <p>Classic BMW R-Series Specialist</p>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/95 p-4 sm:p-8">
+        <button type="button" id="lightbox-close" class="absolute right-4 top-4 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20">Kapat</button>
+        <button type="button" id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white hover:bg-white/20" aria-label="Önceki">‹</button>
+        <button type="button" id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white hover:bg-white/20" aria-label="Sonraki">›</button>
+        <div class="flex h-full flex-col items-center justify-center gap-4">
+            <img id="lightbox-img" src="" alt="" class="max-h-[82vh] max-w-full object-contain">
+            <div class="text-center">
+                <p id="lightbox-title" class="text-sm font-semibold text-white"></p>
+                <p id="lightbox-count" class="text-xs text-neutral-400 mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxCount = document.getElementById('lightbox-count');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        let gallery = [];
+        let galleryIndex = 0;
+
+        function renderLightbox() {
+            if (!gallery.length) return;
+            lightboxImg.src = gallery[galleryIndex];
+            lightboxCount.textContent = `${galleryIndex + 1} / ${gallery.length}`;
+            prevBtn.style.display = gallery.length > 1 ? 'block' : 'none';
+            nextBtn.style.display = gallery.length > 1 ? 'block' : 'none';
+        }
+
+        function openLightbox(button) {
+            gallery = button.dataset.gallery.split('|').filter(Boolean);
+            galleryIndex = 0;
+            lightboxTitle.textContent = button.dataset.title || '';
+            renderLightbox();
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightboxImg.src = '';
+            document.body.style.overflow = '';
+        }
+
+        function moveLightbox(direction) {
+            galleryIndex = (galleryIndex + direction + gallery.length) % gallery.length;
+            renderLightbox();
+        }
+
+        document.querySelectorAll('[data-gallery]').forEach((button) => {
+            button.addEventListener('click', () => openLightbox(button));
+        });
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', () => moveLightbox(-1));
+        nextBtn.addEventListener('click', () => moveLightbox(1));
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (event.key === 'Escape') closeLightbox();
+            if (event.key === 'ArrowLeft') moveLightbox(-1);
+            if (event.key === 'ArrowRight') moveLightbox(1);
+        });
+    </script>
+</body>
+</html>
