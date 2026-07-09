@@ -80,8 +80,8 @@
                 </div>
                 </div>
             </div>
-            <button type="button" id="hero-gallery" class="relative aspect-[4/3] rounded-lg overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl cursor-zoom-in" data-gallery="img-20191027-wa0004.jpeg|20210520-182342.jpg|received-371333108228085.jpeg|r25.jpeg|r26.jpg|r26.png|r27.jpeg|r51-3.jpeg|sepetli3.jpg" data-title="Completed Motorcycles" aria-label="Inspect Closely">
-                <img id="hero-gallery-image" src="img-20191027-wa0004.jpeg" alt="Completed Motorcycles" class="w-full h-full object-cover transition-opacity duration-500" loading="eager">
+            <button type="button" id="hero-gallery" class="relative aspect-[4/3] rounded-lg overflow-hidden border border-neutral-800 bg-neutral-900 shadow-2xl cursor-zoom-in" data-gallery="img-20191027-wa0004.jpeg|20210520-182342.jpg|received-371333108228085.jpeg|r25.jpeg|r26.jpg|r26.png|r27.jpeg|r51-3.jpeg|sepetli3.jpg" data-preview-gallery="previews/img-20191027-wa0004.jpg|previews/20210520-182342.jpg|previews/received-371333108228085.jpg|previews/r25.jpg|previews/r26.jpg|previews/r26-2.jpg|previews/r27.jpg|previews/r51-3.jpg|previews/sepetli3.jpg" data-title="Completed Motorcycles" aria-label="Inspect Closely">
+                <img id="hero-gallery-image" src="previews/img-20191027-wa0004.jpg" alt="Completed Motorcycles" class="w-full h-full object-cover transition-opacity duration-500" loading="eager">
                 <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent"></div>
                 <span class="absolute left-4 bottom-4 text-sm font-semibold text-white">Completed Motorcycles</span>
                 <span id="hero-gallery-count" class="absolute right-4 bottom-4 text-xs font-mono text-white/80">1 / 9</span>
@@ -94,26 +94,27 @@
             const heroGallery = document.getElementById('hero-gallery');
             const heroImage = document.getElementById('hero-gallery-image');
             const heroCount = document.getElementById('hero-gallery-count');
-            const heroImages = heroGallery.dataset.gallery.split('|').filter(Boolean);
+            const heroFullImages = heroGallery.dataset.gallery.split('|').filter(Boolean);
+            const heroImages = (heroGallery.dataset.previewGallery || heroGallery.dataset.gallery).split('|').filter(Boolean);
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let heroIndex = 0;
             let heroTimer;
 
             function showNextHeroImage() {
-                heroIndex = (heroIndex + 1) % heroImages.length;
+                heroIndex = (heroIndex + 1) % heroFullImages.length;
                 heroImage.style.opacity = '0';
                 window.setTimeout(() => {
                     heroImage.addEventListener('load', () => {
                         heroImage.style.opacity = '1';
                     }, { once: true });
-                    heroImage.src = heroImages[heroIndex];
+                    heroImage.src = heroImages[heroIndex] || heroFullImages[heroIndex];
                     if (heroImage.complete) heroImage.style.opacity = '1';
-                    heroCount.textContent = `${heroIndex + 1} / ${heroImages.length}`;
+                    heroCount.textContent = `${heroIndex + 1} / ${heroFullImages.length}`;
                 }, 250);
             }
 
             function startHeroCarousel() {
-                if (reduceMotion || heroImages.length < 2) return;
+                if (reduceMotion || heroFullImages.length < 2) return;
                 window.clearInterval(heroTimer);
                 heroTimer = window.setInterval(showNextHeroImage, 3000);
             }
@@ -143,8 +144,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20191002-214744.jpg" data-title="Aluminum Accessory and Fastener Set" aria-label="Inspect Closely">
-                        <img src="20191002-214744.jpg" alt="Aluminum Accessory and Fastener Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20191002-214744.jpg" data-preview-gallery="previews/20191002-214744.jpg" data-title="Aluminum Accessory and Fastener Set" aria-label="Inspect Closely">
+                        <img src="previews/20191002-214744.jpg" alt="Aluminum Accessory and Fastener Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -156,8 +157,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20200806-000211.jpg|img-20231014-222831.jpg" data-title="Classic Signal and Lamp Set" aria-label="Inspect Closely">
-                        <img src="20200806-000211.jpg" alt="Classic Signal and Lamp Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20200806-000211.jpg|img-20231014-222831.jpg" data-preview-gallery="previews/20200806-000211.jpg|previews/img-20231014-222831.jpg" data-title="Classic Signal and Lamp Set" aria-label="Inspect Closely">
+                        <img src="previews/20200806-000211.jpg" alt="Classic Signal and Lamp Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -169,8 +170,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="received-2287945074680398.jpeg" data-title="Pagusa Solo Seat" aria-label="Inspect Closely">
-                        <img src="received-2287945074680398.jpeg" alt="Pagusa Solo Seat" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="received-2287945074680398.jpeg" data-preview-gallery="previews/received-2287945074680398.jpg" data-title="Pagusa Solo Seat" aria-label="Inspect Closely">
+                        <img src="previews/received-2287945074680398.jpg" alt="Pagusa Solo Seat" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -182,8 +183,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20200113-201342.jpg" data-title="Model and Year Plates" aria-label="Inspect Closely">
-                        <img src="20200113-201342.jpg" alt="Model and Year Plates" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="20200113-201342.jpg" data-preview-gallery="previews/20200113-201342.jpg" data-title="Model and Year Plates" aria-label="Inspect Closely">
+                        <img src="previews/20200113-201342.jpg" alt="Model and Year Plates" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -195,8 +196,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20200723-wa0014.jpg" data-title="BMW Data Plate" aria-label="Inspect Closely">
-                        <img src="img-20200723-wa0014.jpg" alt="BMW Data Plate" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20200723-wa0014.jpg" data-preview-gallery="previews/img-20200723-wa0014.jpg" data-title="BMW Data Plate" aria-label="Inspect Closely">
+                        <img src="previews/img-20200723-wa0014.jpg" alt="BMW Data Plate" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -208,8 +209,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20181126-001449.jpg|img-20181126-001651.jpg" data-title="Classic BMW Side Cases" aria-label="Inspect Closely">
-                        <img src="img-20181126-001449.jpg" alt="Classic BMW Side Cases" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20181126-001449.jpg|img-20181126-001651.jpg" data-preview-gallery="previews/img-20181126-001449.jpg|previews/img-20181126-001651.jpg" data-title="Classic BMW Side Cases" aria-label="Inspect Closely">
+                        <img src="previews/img-20181126-001449.jpg" alt="Classic BMW Side Cases" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -221,8 +222,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="ayak-basma-demirleri-3.jpg|ayak-basma-demirleri-2.jpg|ayak-basma-derileri.jpg" data-title="Foot Peg Set" aria-label="Inspect Closely">
-                        <img src="ayak-basma-demirleri-3.jpg" alt="Foot Peg Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="ayak-basma-demirleri-3.jpg|ayak-basma-demirleri-2.jpg|ayak-basma-derileri.jpg" data-preview-gallery="previews/ayak-basma-demirleri-3.jpg|previews/ayak-basma-demirleri-2.jpg|previews/ayak-basma-derileri.jpg" data-title="Foot Peg Set" aria-label="Inspect Closely">
+                        <img src="previews/ayak-basma-demirleri-3.jpg" alt="Foot Peg Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">3 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -234,8 +235,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="besik-amortisor-kovanlar.jpg|kazk-amortisor-kovanlar.jpg" data-title="Shock Sleeves" aria-label="Inspect Closely">
-                        <img src="besik-amortisor-kovanlar.jpg" alt="Shock Sleeves" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="besik-amortisor-kovanlar.jpg|kazk-amortisor-kovanlar.jpg" data-preview-gallery="previews/besik-amortisor-kovanlar.jpg|previews/kazk-amortisor-kovanlar.jpg" data-title="Shock Sleeves" aria-label="Inspect Closely">
+                        <img src="previews/besik-amortisor-kovanlar.jpg" alt="Shock Sleeves" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -247,8 +248,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="diferansiyel-kapak-somunu.jpg" data-title="Final Drive Cover Nuts" aria-label="Inspect Closely">
-                        <img src="diferansiyel-kapak-somunu.jpg" alt="Final Drive Cover Nuts" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="diferansiyel-kapak-somunu.jpg" data-preview-gallery="previews/diferansiyel-kapak-somunu.jpg" data-title="Final Drive Cover Nuts" aria-label="Inspect Closely">
+                        <img src="previews/diferansiyel-kapak-somunu.jpg" alt="Final Drive Cover Nuts" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -260,8 +261,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="eksoz-bogaz-ve-somunu.jpg|eksok-bogaz-disi.jpg|eksoz-bogaz-dis-imalat.jpg|silindir-kapag-eksoz-bogaz-disi.jpg" data-title="Exhaust Port Thread and Nut Group" aria-label="Inspect Closely">
-                        <img src="eksoz-bogaz-ve-somunu.jpg" alt="Exhaust Port Thread and Nut Group" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="eksoz-bogaz-ve-somunu.jpg|eksok-bogaz-disi.jpg|eksoz-bogaz-dis-imalat.jpg|silindir-kapag-eksoz-bogaz-disi.jpg" data-preview-gallery="previews/eksoz-bogaz-ve-somunu.jpg|previews/eksok-bogaz-disi.jpg|previews/eksoz-bogaz-dis-imalat.jpg|previews/silindir-kapag-eksoz-bogaz-disi.jpg" data-title="Exhaust Port Thread and Nut Group" aria-label="Inspect Closely">
+                        <img src="previews/eksoz-bogaz-ve-somunu.jpg" alt="Exhaust Port Thread and Nut Group" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">4 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -273,8 +274,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="elektronik-atesleme.jpg" data-title="Electronic Ignition Set" aria-label="Inspect Closely">
-                        <img src="elektronik-atesleme.jpg" alt="Electronic Ignition Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="elektronik-atesleme.jpg" data-preview-gallery="previews/elektronik-atesleme.jpg" data-title="Electronic Ignition Set" aria-label="Inspect Closely">
+                        <img src="previews/elektronik-atesleme.jpg" alt="Electronic Ignition Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -286,8 +287,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20210605-wa0004.jpg|img-20190408-175037.jpg" data-title="BMW Tank Roundel Sets" aria-label="Inspect Closely">
-                        <img src="img-20210605-wa0004.jpg" alt="BMW Tank Roundel Sets" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20210605-wa0004.jpg|img-20190408-175037.jpg" data-preview-gallery="previews/img-20210605-wa0004.jpg|previews/img-20190408-175037.jpg" data-title="BMW Tank Roundel Sets" aria-label="Inspect Closely">
+                        <img src="previews/img-20210605-wa0004.jpg" alt="BMW Tank Roundel Sets" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -299,8 +300,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20251204-211125.jpg|img-20251204-210807.jpg|img-20251204-211138.jpg|kilometre-saati-kadranlar.jpg|km-saat-kadran.jpg|km-saat-kadran-2.jpg" data-title="Speedometers and Dial Faces" aria-label="Inspect Closely">
-                        <img src="img-20251204-211125.jpg" alt="Speedometers and Dial Faces" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20251204-211125.jpg|img-20251204-210807.jpg|img-20251204-211138.jpg|kilometre-saati-kadranlar.jpg|km-saat-kadran.jpg|km-saat-kadran-2.jpg" data-preview-gallery="previews/img-20251204-211125.jpg|previews/img-20251204-210807.jpg|previews/img-20251204-211138.jpg|previews/kilometre-saati-kadranlar.jpg|previews/km-saat-kadran.jpg|previews/km-saat-kadran-2.jpg" data-title="Speedometers and Dial Faces" aria-label="Inspect Closely">
+                        <img src="previews/img-20251204-211125.jpg" alt="Speedometers and Dial Faces" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">6 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -312,8 +313,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20260627-132323.jpg" data-title="Headlight Ear Set" aria-label="Inspect Closely">
-                        <img src="img-20260627-132323.jpg" alt="Headlight Ear Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="img-20260627-132323.jpg" data-preview-gallery="previews/img-20260627-132323.jpg" data-title="Headlight Ear Set" aria-label="Inspect Closely">
+                        <img src="previews/img-20260627-132323.jpg" alt="Headlight Ear Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -325,8 +326,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="kas-halat-dislileri.jpg|kas-halat-dislisi.jpg" data-title="Cable Gear Sets" aria-label="Inspect Closely">
-                        <img src="kas-halat-dislileri.jpg" alt="Cable Gear Sets" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="kas-halat-dislileri.jpg|kas-halat-dislisi.jpg" data-preview-gallery="previews/kas-halat-dislileri.jpg|previews/kas-halat-dislisi.jpg" data-title="Cable Gear Sets" aria-label="Inspect Closely">
+                        <img src="previews/kas-halat-dislileri.jpg" alt="Cable Gear Sets" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -338,8 +339,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="kilometre-cevrim-dislisi.jpg" data-title="Speedometer Drive Gear" aria-label="Inspect Closely">
-                        <img src="kilometre-cevrim-dislisi.jpg" alt="Speedometer Drive Gear" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="kilometre-cevrim-dislisi.jpg" data-preview-gallery="previews/kilometre-cevrim-dislisi.jpg" data-title="Speedometer Drive Gear" aria-label="Inspect Closely">
+                        <img src="previews/kilometre-cevrim-dislisi.jpg" alt="Speedometer Drive Gear" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -351,8 +352,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="orijinal-gorunumde-kontak-anahtar.jpg" data-title="Original-Style Ignition Keys" aria-label="Inspect Closely">
-                        <img src="orijinal-gorunumde-kontak-anahtar.jpg" alt="Original-Style Ignition Keys" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="orijinal-gorunumde-kontak-anahtar.jpg" data-preview-gallery="previews/orijinal-gorunumde-kontak-anahtar.jpg" data-title="Original-Style Ignition Keys" aria-label="Inspect Closely">
+                        <img src="previews/orijinal-gorunumde-kontak-anahtar.jpg" alt="Original-Style Ignition Keys" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -364,8 +365,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="orta-ayaklk.jpg" data-title="Center Stand" aria-label="Inspect Closely">
-                        <img src="orta-ayaklk.jpg" alt="Center Stand" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="orta-ayaklk.jpg" data-preview-gallery="previews/orta-ayaklk.jpg" data-title="Center Stand" aria-label="Inspect Closely">
+                        <img src="previews/orta-ayaklk.jpg" alt="Center Stand" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -377,8 +378,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-4 flex flex-col justify-between hover:border-amber-500/50 transition-colors">
                 <div>
-                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="subap-itici-kavallar.jpg" data-title="Pushrod Tube Set" aria-label="Inspect Closely">
-                        <img src="subap-itici-kavallar.jpg" alt="Pushrod Tube Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-square w-full bg-neutral-800 rounded-md mb-4 relative overflow-hidden cursor-zoom-in" data-gallery="subap-itici-kavallar.jpg" data-preview-gallery="previews/subap-itici-kavallar.jpg" data-title="Pushrod Tube Set" aria-label="Inspect Closely">
+                        <img src="previews/subap-itici-kavallar.jpg" alt="Pushrod Tube Set" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -399,8 +400,8 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="20200114-140150.jpg|received-1297363674120186.jpeg" data-title="BMW R50/2 with Sidecar" aria-label="Inspect Closely">
-                        <img src="20200114-140150.jpg" alt="BMW R50/2 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="20200114-140150.jpg|received-1297363674120186.jpeg" data-preview-gallery="previews/20200114-140150.jpg|previews/received-1297363674120186.jpg" data-title="BMW R50/2 with Sidecar" aria-label="Inspect Closely">
+                        <img src="previews/20200114-140150.jpg" alt="BMW R50/2 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">2 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -417,8 +418,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="20210520-182342.jpg" data-title="BMW R60/2 with Sidecar" aria-label="Inspect Closely">
-                        <img src="20210520-182342.jpg" alt="BMW R60/2 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="20210520-182342.jpg" data-preview-gallery="previews/20210520-182342.jpg" data-title="BMW R60/2 with Sidecar" aria-label="Inspect Closely">
+                        <img src="previews/20210520-182342.jpg" alt="BMW R60/2 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -435,8 +436,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="received-371333108228085.jpeg" data-title="Green BMW with Sidecar" aria-label="Inspect Closely">
-                        <img src="received-371333108228085.jpeg" alt="Green BMW with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="received-371333108228085.jpeg" data-preview-gallery="previews/received-371333108228085.jpg" data-title="Green BMW with Sidecar" aria-label="Inspect Closely">
+                        <img src="previews/received-371333108228085.jpg" alt="Green BMW with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -453,8 +454,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r25.jpeg" data-title="Green BMW R25" aria-label="Inspect Closely">
-                        <img src="r25.jpeg" alt="Green BMW R25" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r25.jpeg" data-preview-gallery="previews/r25.jpg" data-title="Green BMW R25" aria-label="Inspect Closely">
+                        <img src="previews/r25.jpg" alt="Green BMW R25" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -471,8 +472,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r26.jpg" data-title="Cream BMW R26" aria-label="Inspect Closely">
-                        <img src="r26.jpg" alt="Cream BMW R26" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r26.jpg" data-preview-gallery="previews/r26.jpg" data-title="Cream BMW R26" aria-label="Inspect Closely">
+                        <img src="previews/r26.jpg" alt="Cream BMW R26" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -489,8 +490,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r26.png" data-title="Black BMW R26" aria-label="Inspect Closely">
-                        <img src="r26.png" alt="Black BMW R26" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r26.png" data-preview-gallery="previews/r26-2.jpg" data-title="Black BMW R26" aria-label="Inspect Closely">
+                        <img src="previews/r26-2.jpg" alt="Black BMW R26" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -507,8 +508,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r27.jpeg" data-title="Black BMW R27" aria-label="Inspect Closely">
-                        <img src="r27.jpeg" alt="Black BMW R27" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r27.jpeg" data-preview-gallery="previews/r27.jpg" data-title="Black BMW R27" aria-label="Inspect Closely">
+                        <img src="previews/r27.jpg" alt="Black BMW R27" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -525,8 +526,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r51-3.jpeg" data-title="Black BMW R51/3" aria-label="Inspect Closely">
-                        <img src="r51-3.jpeg" alt="Black BMW R51/3" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="r51-3.jpeg" data-preview-gallery="previews/r51-3.jpg" data-title="Black BMW R51/3" aria-label="Inspect Closely">
+                        <img src="previews/r51-3.jpg" alt="Black BMW R51/3" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">1 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -543,8 +544,8 @@
 
             <article class="bg-neutral-900 border border-neutral-800 rounded-lg overflow-hidden flex flex-col group">
                 <div class="aspect-video w-full bg-neutral-800 relative overflow-hidden">
-                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="sepetli3.jpg|sepetli4.jpg|sepetli.jpg" data-title="1956 BMW R26 with Sidecar" aria-label="Inspect Closely">
-                        <img src="sepetli3.jpg" alt="1956 BMW R26 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+                    <button type="button" class="group/image aspect-video w-full bg-neutral-800 rounded-none mb-0 relative overflow-hidden cursor-zoom-in" data-gallery="sepetli3.jpg|sepetli4.jpg|sepetli.jpg" data-preview-gallery="previews/sepetli3.jpg|previews/sepetli4.jpg|previews/sepetli.jpg" data-title="1956 BMW R26 with Sidecar" aria-label="Inspect Closely">
+                        <img src="previews/sepetli3.jpg" alt="1956 BMW R26 with Sidecar" class="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
                         <span class="absolute left-3 top-3 rounded-full bg-neutral-950/80 px-3 py-1 text-[11px] font-semibold text-amber-300 border border-amber-500/30">3 Photos</span>
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-950/90 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Inspect Closely</span>
                     </button>
@@ -568,23 +569,23 @@
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="20210311-144845.jpg" data-title="Tank paint and emblem preparation" aria-label="Inspect Closely">
-                <img src="20210311-144845.jpg" alt="Tank paint and emblem preparation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="20210311-144845.jpg" data-preview-gallery="previews/20210311-144845.jpg" data-title="Tank paint and emblem preparation" aria-label="Inspect Closely">
+                <img src="previews/20210311-144845.jpg" alt="Tank paint and emblem preparation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
             </button>
-            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20251204-210807.jpg" data-title="Gauge refurbishment detail" aria-label="Inspect Closely">
-                <img src="img-20251204-210807.jpg" alt="Gauge refurbishment detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20251204-210807.jpg" data-preview-gallery="previews/img-20251204-210807.jpg" data-title="Gauge refurbishment detail" aria-label="Inspect Closely">
+                <img src="previews/img-20251204-210807.jpg" alt="Gauge refurbishment detail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
             </button>
-            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20251204-211138.jpg" data-title="Gauge collection" aria-label="Inspect Closely">
-                <img src="img-20251204-211138.jpg" alt="Gauge collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20251204-211138.jpg" data-preview-gallery="previews/img-20251204-211138.jpg" data-title="Gauge collection" aria-label="Inspect Closely">
+                <img src="previews/img-20251204-211138.jpg" alt="Gauge collection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
             </button>
-            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="kilometre-saati-kadranlar.jpg" data-title="Dial preparation shelf" aria-label="Inspect Closely">
-                <img src="kilometre-saati-kadranlar.jpg" alt="Dial preparation shelf" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="kilometre-saati-kadranlar.jpg" data-preview-gallery="previews/kilometre-saati-kadranlar.jpg" data-title="Dial preparation shelf" aria-label="Inspect Closely">
+                <img src="previews/kilometre-saati-kadranlar.jpg" alt="Dial preparation shelf" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
             </button>
-            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20210605-wa0004.jpg" data-title="BMW roundel details" aria-label="Inspect Closely">
-                <img src="img-20210605-wa0004.jpg" alt="BMW roundel details" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20210605-wa0004.jpg" data-preview-gallery="previews/img-20210605-wa0004.jpg" data-title="BMW roundel details" aria-label="Inspect Closely">
+                <img src="previews/img-20210605-wa0004.jpg" alt="BMW roundel details" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
             </button>
-            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20190408-175037.jpg" data-title="Logo and roundel options" aria-label="Inspect Closely">
-                <img src="img-20190408-175037.jpg" alt="Logo and roundel options" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
+            <button type="button" class="aspect-square bg-neutral-800 rounded-md overflow-hidden relative group cursor-zoom-in" data-gallery="img-20190408-175037.jpg" data-preview-gallery="previews/img-20190408-175037.jpg" data-title="Logo and roundel options" aria-label="Inspect Closely">
+                <img src="previews/img-20190408-175037.jpg" alt="Logo and roundel options" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" onerror="this.style.display='none';">
             </button>
         </div>
     </section>
