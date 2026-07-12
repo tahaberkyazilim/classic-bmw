@@ -36,6 +36,12 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+        .rest-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-950 font-sans antialiased selection:bg-blue-700 selection:text-white">
@@ -63,7 +69,6 @@
             <div class="mx-auto flex max-w-7xl gap-2 px-4 py-2 text-sm font-semibold whitespace-nowrap">
                 <a href="#products" class="rounded-full bg-blue-700 px-4 py-2 text-white">Ürünler</a>
                 <a href="#contact" class="rounded-full bg-slate-100 px-4 py-2 text-slate-700">İletişim</a>
-                <a href="#completed" class="rounded-full bg-slate-100 px-4 py-2 text-slate-700">Tamamlananlar</a>
                 <a href="#about" class="rounded-full bg-slate-100 px-4 py-2 text-slate-700">Hakkında</a>
             </div>
         </nav>
@@ -155,7 +160,7 @@
                 <h2 class="text-3xl font-bold tracking-tight text-slate-950 mb-4">Klasik BMW Yedek Parçaları</h2>
                 <p class="text-slate-600 max-w-2xl">Ürünler fotoğraf gruplarıyla listelendi. Kapak görseline basarak detayları tam ekran inceleyebilirsiniz.</p>
             </div>
-            <a href="#contact" class="inline-flex rounded-md bg-red-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-red-700 transition-colors">İletişime Geç</a>
+            <a href="#contact" class="inline-flex rounded-md bg-blue-700 px-4 py-2.5 text-sm font-bold text-white hover:bg-blue-800 transition-colors">İletişime Geç</a>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
@@ -458,7 +463,7 @@
             <p class="text-slate-600 max-w-xl">Atölyeden çıkan tamamlanmış motosikletlerden seçilmiş örnekler.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8">
             <article class="bg-white border border-slate-200 rounded-lg overflow-hidden flex flex-col group shadow-sm">
                 <div class="aspect-video w-full bg-slate-100 relative overflow-hidden">
                     <button type="button" class="group/image aspect-video w-full bg-slate-100 rounded-none mb-0 relative overflow-hidden cursor-zoom-in border border-slate-200" data-gallery="20200114-140150.jpg|received-1297363674120186.jpeg" data-preview-gallery="previews/20200114-140150.jpg|previews/received-1297363674120186.jpg" data-title="BMW R50/2 Sepetli" aria-label="Yakından İncele">
@@ -467,13 +472,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">1962</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">BMW R50/2 Sepetli</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Kırmızı boya ve krom detaylarıyla tamamlanan, sepetli klasik BMW projesi.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">1962</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">BMW R50/2 Sepetli</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Kırmızı boya ve krom detaylarıyla tamamlanan, sepetli klasik BMW projesi.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Atölyeden Çıktı</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Atölyeden Çıktı</span>
                 </div>
             </article>
 
@@ -485,13 +490,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">1967</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">BMW R60/2 Sepetli</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Teslim öncesi son kontrolleri yapılan beyaz/krem sepetli proje.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">1967</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">BMW R60/2 Sepetli</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Teslim öncesi son kontrolleri yapılan beyaz/krem sepetli proje.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Koleksiyonda</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Koleksiyonda</span>
                 </div>
             </article>
 
@@ -503,13 +508,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">1960&#x27;lar</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">Yeşil Sepetli BMW</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Atölyede tamamlanmış, sepetli yeşil BMW projesi.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">1960&#x27;lar</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">Yeşil Sepetli BMW</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Atölyede tamamlanmış, sepetli yeşil BMW projesi.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
                 </div>
             </article>
 
@@ -521,13 +526,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">BMW R25</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">Yeşil BMW R25</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Yeşil boya, beyaz şeritler ve yenilenen krom detaylarla tamamlanan klasik BMW R25.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">BMW R25</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">Yeşil BMW R25</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Yeşil boya, beyaz şeritler ve yenilenen krom detaylarla tamamlanan klasik BMW R25.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
                 </div>
             </article>
 
@@ -539,13 +544,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">BMW R26</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">Krem BMW R26</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Krem renk, siyah şeritler ve dönemine uygun detaylarla tamamlanan BMW R26.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">BMW R26</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">Krem BMW R26</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Krem renk, siyah şeritler ve dönemine uygun detaylarla tamamlanan BMW R26.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
                 </div>
             </article>
 
@@ -557,13 +562,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">BMW R26</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">Siyah BMW R26</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Klasik siyah boya ve beyaz şeritlerle tamamlanan BMW R26.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">BMW R26</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">Siyah BMW R26</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Klasik siyah boya ve beyaz şeritlerle tamamlanan BMW R26.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
                 </div>
             </article>
 
@@ -575,13 +580,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">BMW R27</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">Siyah BMW R27</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Orijinal çizgileri korunarak tamamlanan tek silindirli klasik BMW R27.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">BMW R27</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">Siyah BMW R27</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Orijinal çizgileri korunarak tamamlanan tek silindirli klasik BMW R27.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
                 </div>
             </article>
 
@@ -593,13 +598,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">BMW R51/3</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">Siyah BMW R51/3</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Klasik siyah gövde ve beyaz şerit detaylarıyla tamamlanan BMW R51/3.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">BMW R51/3</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">Siyah BMW R51/3</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Klasik siyah gövde ve beyaz şerit detaylarıyla tamamlanan BMW R51/3.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
                 </div>
             </article>
 
@@ -611,13 +616,13 @@
                         <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-blue-950/85 to-transparent px-3 pb-3 pt-10 text-left text-xs font-semibold text-white opacity-0 group-hover/image:opacity-100 transition-opacity">Yakından İncele</span>
                     </button>
                 </div>
-                <div class="p-6 flex-1 flex flex-col justify-between">
+                <div class="p-3 sm:p-6 flex-1 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-mono font-bold text-blue-700">1956</span>
-                        <h3 class="text-xl font-bold text-slate-950 mt-2 mb-3">1956 BMW R26 Sepetli</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Siyah boya, kırmızı döşeme ve Steib sepetiyle tamamlanan BMW R26 projesi.</p>
+                        <span class="text-[10px] sm:text-xs font-mono font-bold text-blue-700">1956</span>
+                        <h3 class="text-sm sm:text-xl font-bold text-slate-950 mt-1 sm:mt-2 mb-2 sm:mb-3 leading-snug">1956 BMW R26 Sepetli</h3>
+                        <p class="rest-desc text-xs sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-4">Siyah boya, kırmızı döşeme ve Steib sepetiyle tamamlanan BMW R26 projesi.</p>
                     </div>
-                    <span class="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
+                    <span class="text-[10px] sm:text-xs px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded self-start">Tamamlandı</span>
                 </div>
             </article>
         </div>
