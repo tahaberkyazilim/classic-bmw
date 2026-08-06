@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://classicbmwparts.netlify.app/sitemap.xml
